@@ -1,12 +1,13 @@
 //
 //  AppDelegate.swift
-//  Practice_01
+//  aeushakovaPW1
 //
-//  Created by admin on 16.09.2023.
+//  Created by admin on 17.09.2023.
 //
 
 import UIKit
 
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
