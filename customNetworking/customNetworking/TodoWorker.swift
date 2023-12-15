@@ -47,7 +47,7 @@ final class TodoWorker {
                 
             case .success(let model):
                 if let data = model.data {
-                    print(String(data: data, encoding: .utf8))
+                    print(String(data: data, encoding: .utf8) as Any)
                 }
             case .failure(let error):
                 completion(.failure(error))

@@ -1,10 +1,3 @@
-//
-//  Request.swift
-//  customNetworking
-//
-//  Created by Aleksa Khruleva on 01.12.2023.
-//
-
 import Foundation
 
 struct Request {
@@ -24,7 +17,7 @@ struct Request {
     
     init(
         endpoint: Endpoint,
-        method: Request.RequestMethod,
+        method: Request.RequestMethod = .get,
         parameters: RequestParameters? = nil,
         body: Data? = nil
     ) {
