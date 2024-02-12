@@ -16,7 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = WishMakerViewController()
+        let mainVC = WishMakerViewController() // Создаем экземпляр основного ViewController
+        let navC = UINavigationController(rootViewController: mainVC) // Обертываем его в UINavigationController
+        window.rootViewController = navC // Устанавливаем UINavigationController как rootViewController
         self.window = window
         window.makeKeyAndVisible()
         

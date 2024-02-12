@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		843891D52B7AB0AF0023E3A5 /* WishCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843891D42B7AB0AF0023E3A5 /* WishCalendarViewController.swift */; };
 		84A5CB6B2B01642D00B9CA04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5CB6A2B01642D00B9CA04 /* AppDelegate.swift */; };
 		84A5CB6D2B01642D00B9CA04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5CB6C2B01642D00B9CA04 /* SceneDelegate.swift */; };
 		84A5CB742B01643500B9CA04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A5CB732B01643500B9CA04 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		843891D42B7AB0AF0023E3A5 /* WishCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishCalendarViewController.swift; sourceTree = "<group>"; };
 		84A5CB672B01642D00B9CA04 /* aeushakovaPW3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aeushakovaPW3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A5CB6A2B01642D00B9CA04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84A5CB6C2B01642D00B9CA04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				84A5CB782B01643500B9CA04 /* Info.plist */,
 				84A5CB882B01937500B9CA04 /* WrittenWishCell.swift */,
 				84A5CB8A2B01968100B9CA04 /* AddWishCell.swift */,
+				843891D42B7AB0AF0023E3A5 /* WishCalendarViewController.swift */,
 			);
 			path = aeushakovaPW3;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843891D52B7AB0AF0023E3A5 /* WishCalendarViewController.swift in Sources */,
 				84A5CB8B2B01968100B9CA04 /* AddWishCell.swift in Sources */,
 				84A5CB892B01937500B9CA04 /* WrittenWishCell.swift in Sources */,
 				84A5CB872B017F3500B9CA04 /* WishStoringViewController.swift in Sources */,

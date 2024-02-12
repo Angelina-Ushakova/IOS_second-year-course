@@ -99,6 +99,11 @@ final class WishMakerViewController: UIViewController {
         addWishButton.addTarget(self, action: #selector(addWishButtonPressed), for: .touchUpInside)
     }
     
+    @objc private func addWishButtonPressed() {
+        let wishStoringVC = WishStoringViewController()
+        present(wishStoringVC, animated: true)
+    }
+    
     private func configureScheduleWishButton() {
         view.addSubview(scheduleWishButton)
         scheduleWishButton.setHeight(Constants.buttonHeight)
@@ -109,13 +114,12 @@ final class WishMakerViewController: UIViewController {
         scheduleWishButton.setTitleColor(.systemPink, for: .normal)
         scheduleWishButton.setTitle(Constants.buttonScheduleText, for: .normal)
         scheduleWishButton.layer.cornerRadius = Constants.buttonRadius
-        // Добавьте любое действие, которое должна выполнять новая кнопка
+        scheduleWishButton.addTarget(self, action: #selector(scheduleWishButtonPressed), for: .touchUpInside)
     }
-
     
-    @objc private func addWishButtonPressed() {
-        let wishStoringVC = WishStoringViewController()
-        present(wishStoringVC, animated: true)
+    @objc func scheduleWishButtonPressed() {
+        let vc = WishCalendarViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func configureSliders() {
