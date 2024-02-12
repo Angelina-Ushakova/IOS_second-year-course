@@ -147,12 +147,28 @@ final class WishMakerViewController: UIViewController {
         }
     }
     
+    private var currentBackgroundColor: UIColor = .systemPink {
+        didSet {
+            view.backgroundColor = currentBackgroundColor
+            updateButtonsTextColor()
+        }
+    }
+    
+    private func updateButtonsTextColor() {
+        let textColor = currentBackgroundColor
+        addWishButton.setTitleColor(textColor, for: .normal)
+        scheduleWishButton.setTitleColor(textColor, for: .normal)
+        toggleButton.setTitleColor(textColor, for: .normal)
+        randomColorButton.setTitleColor(textColor, for: .normal)
+    }
+    
     private func updateBackgroundColor() {
         let red = CGFloat(sliderRed.slider.value)
         let green = CGFloat(sliderGreen.slider.value)
         let blue = CGFloat(sliderBlue.slider.value)
-        view.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+        currentBackgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
     }
+
     
     private func configureToggleButton() {
         configureButtonAppearance(toggleButton)
@@ -215,6 +231,8 @@ final class WishMakerViewController: UIViewController {
         let red = CGFloat.random(in: 0...1)
         let green = CGFloat.random(in: 0...1)
         let blue = CGFloat.random(in: 0...1)
-        view.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+        currentBackgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
     }
+
 }
+
