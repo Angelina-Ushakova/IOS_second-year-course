@@ -23,9 +23,11 @@ final class WishMakerViewController: UIViewController {
         static let buttonHeight: CGFloat = 50 // Высота кнопки
         static let buttonBottom: CGFloat = 30 // Отступ кнопки снизу
         static let buttonSide: CGFloat = 20 // Горизонтальные отступы кнопки
+        static let buttonSpacing: CGFloat = 20
         static let buttonRadius: CGFloat = 25 // Радиус скругления кнопки
-        static let buttonText: String = "My wishes" // Текст на кнопке
-        static let sliderButtonSpacing: CGFloat = -30 // Отступ между слайдерами и кнопкой
+        static let buttonText: String = "Add more wishes" // Текст на кнопке
+        static let buttonScheduleText: String = "Schedule Wish Granting"
+        static let sliderButtonSpacing: CGFloat = -20 // Отступ между слайдерами и кнопкой
     }
 
     
@@ -38,6 +40,7 @@ final class WishMakerViewController: UIViewController {
     private let randomColorButton = UIButton()
     
     private let addWishButton: UIButton = UIButton(type: .system)
+    private let scheduleWishButton: UIButton = UIButton(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +52,7 @@ final class WishMakerViewController: UIViewController {
         configureTitle()
         configureDescription()
         configureAddWishButton()
+        configureScheduleWishButton()
         configureSliders()
         configureToggleButton()
         configureRandomColorButton()
@@ -85,7 +89,7 @@ final class WishMakerViewController: UIViewController {
     private func configureAddWishButton() {
         view.addSubview(addWishButton)
         addWishButton.setHeight(Constants.buttonHeight)
-        addWishButton.pinBottom(to: view, Constants.buttonBottom)
+        addWishButton.pinBottom(to: view, Constants.buttonBottom + Constants.buttonHeight + Constants.buttonSpacing)
         addWishButton.pinHorizontal(to: view, Constants.buttonSide)
 
         addWishButton.backgroundColor = .white
@@ -94,6 +98,20 @@ final class WishMakerViewController: UIViewController {
         addWishButton.layer.cornerRadius = Constants.buttonRadius
         addWishButton.addTarget(self, action: #selector(addWishButtonPressed), for: .touchUpInside)
     }
+    
+    private func configureScheduleWishButton() {
+        view.addSubview(scheduleWishButton)
+        scheduleWishButton.setHeight(Constants.buttonHeight)
+        scheduleWishButton.pinBottom(to: view, Constants.buttonBottom)
+        scheduleWishButton.pinHorizontal(to: view, Constants.buttonSide)
+
+        scheduleWishButton.backgroundColor = .white
+        scheduleWishButton.setTitleColor(.systemPink, for: .normal)
+        scheduleWishButton.setTitle(Constants.buttonScheduleText, for: .normal)
+        scheduleWishButton.layer.cornerRadius = Constants.buttonRadius
+        // Добавьте любое действие, которое должна выполнять новая кнопка
+    }
+
     
     @objc private func addWishButtonPressed() {
         let wishStoringVC = WishStoringViewController()
@@ -144,7 +162,7 @@ final class WishMakerViewController: UIViewController {
         view.addSubview(toggleButton)
         NSLayoutConstraint.activate([
             toggleButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            toggleButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20)
+            toggleButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: Constants.buttonSpacing)
         ])
     }
     
@@ -156,7 +174,7 @@ final class WishMakerViewController: UIViewController {
         view.addSubview(randomColorButton)
         NSLayoutConstraint.activate([
             randomColorButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            randomColorButton.topAnchor.constraint(equalTo: toggleButton.bottomAnchor, constant: 20)
+            randomColorButton.topAnchor.constraint(equalTo: toggleButton.bottomAnchor, constant: Constants.buttonSpacing)
         ])
     }
     
