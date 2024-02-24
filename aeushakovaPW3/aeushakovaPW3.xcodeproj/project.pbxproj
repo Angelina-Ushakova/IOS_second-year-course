@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8417B5CC2B7C3C4500B98810 /* WishEventCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417B5CB2B7C3C4500B98810 /* WishEventCreationView.swift */; };
 		843891D52B7AB0AF0023E3A5 /* WishCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843891D42B7AB0AF0023E3A5 /* WishCalendarViewController.swift */; };
 		849A94DC2B7ACE8800AD44BC /* WishEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A94DB2B7ACE8800AD44BC /* WishEventCell.swift */; };
 		84A5CB6B2B01642D00B9CA04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5CB6A2B01642D00B9CA04 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8417B5CB2B7C3C4500B98810 /* WishEventCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishEventCreationView.swift; sourceTree = "<group>"; };
 		843891D42B7AB0AF0023E3A5 /* WishCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishCalendarViewController.swift; sourceTree = "<group>"; };
 		849A94DB2B7ACE8800AD44BC /* WishEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishEventCell.swift; sourceTree = "<group>"; };
 		84A5CB672B01642D00B9CA04 /* aeushakovaPW3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aeushakovaPW3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,7 @@
 				84A5CB8A2B01968100B9CA04 /* AddWishCell.swift */,
 				843891D42B7AB0AF0023E3A5 /* WishCalendarViewController.swift */,
 				849A94DB2B7ACE8800AD44BC /* WishEventCell.swift */,
+				8417B5CB2B7C3C4500B98810 /* WishEventCreationView.swift */,
 			);
 			path = aeushakovaPW3;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				84A5CB6B2B01642D00B9CA04 /* AppDelegate.swift in Sources */,
 				84A5CB812B0165E100B9CA04 /* WishMakerViewController.swift in Sources */,
 				84A5CB6D2B01642D00B9CA04 /* SceneDelegate.swift in Sources */,
+				8417B5CC2B7C3C4500B98810 /* WishEventCreationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

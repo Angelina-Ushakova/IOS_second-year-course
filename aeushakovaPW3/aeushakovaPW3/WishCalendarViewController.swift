@@ -13,6 +13,20 @@ class WishCalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentEventCreationView))
+    }
+    
+    private var events: [WishEventModel] = []
+
+    @objc func presentEventCreationView() {
+        let eventCreationView = WishEventCreationView()
+        eventCreationView.onSave = { [weak self] event in
+            self?.events.append(event)
+            self?.collectionView.reloadData()
+        }
+        eventCreationView.modalPresentationStyle = .overCurrentContext
+        eventCreationView.modalTransitionStyle = .crossDissolve
+        present(eventCreationView, animated: true, completion: nil)
     }
     
     private func configureCollectionView() {
@@ -43,18 +57,13 @@ class WishCalendarViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 extension WishCalendarViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // Возвращаем количество элементов в секции
-        return Constants.itemsInSection
+        return events.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // Получение и конфигурация ячейки WishEventCell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WishEventCell.reuseIdentifier, for: indexPath) as! WishEventCell
-        
-        // Здесь мы должны передать реальные данные в модель события
-        let event = WishEventModel(title: "Test", description: "Test description", startDate: "Start date", endDate: "End date")
+        let event = events[indexPath.row]
         cell.configure(with: event)
-        
         return cell
     }
 }
